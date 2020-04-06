@@ -1,0 +1,159 @@
+{
+  "notificationType": "Received",
+  "mail": {
+    "timestamp": "2020-04-06T07:01:42.575Z",
+    "source": "010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com",
+    "messageId": "XSVx2kwXNJdYZYdh4xwffR2BLmq52vRY",
+    "destination": [
+      "c292df2c-d2f2-47c2-9ca8-c84b03389282@any.domain.example.com"
+    ],
+    "headersTruncated": false,
+    "headers": [
+      {
+        "name": "Return-Path",
+        "value": "<010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com>"
+      },
+      {
+        "name": "Received",
+        "value": "from b224-5.smtp-out.eu-central-1.amazonses.com (b224-5.smtp-out.eu-central-1.amazonses.com [69.169.224.5]) by inbound-smtp.eu-west-1.amazonaws.com with SMTP id XSVx2kwXNJdYZYdh4xwffR2BLmq52vRY for c292df2c-d2f2-47c2-9ca8-c84b03389282@any.domain.example.com; Mon, 06 Apr 2020 07:01:42 +0000 (UTC)"
+      },
+      {
+        "name": "X-SES-Spam-Verdict",
+        "value": "PASS"
+      },
+      {
+        "name": "X-SES-Virus-Verdict",
+        "value": "PASS"
+      },
+      {
+        "name": "Received-SPF",
+        "value": "pass (spfCheck: domain of eu-central-1.amazonses.com designates 69.169.224.5 as permitted sender) client-ip=69.169.224.5; envelope-from=010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com; helo=b224-5.smtp-out.eu-central-1.amazonses.com;"
+      },
+      {
+        "name": "Authentication-Results",
+        "value": "amazonses.com; spf=pass (spfCheck: domain of eu-central-1.amazonses.com designates 69.169.224.5 as permitted sender) client-ip=69.169.224.5; envelope-from=010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com; helo=b224-5.smtp-out.eu-central-1.amazonses.com; dkim=pass header.i=@sender.example.com; dkim=pass header.i=@amazonses.com; dmarc=pass header.from=sender.example.com;"
+      },
+      {
+        "name": "X-SES-RECEIPT",
+        "value": "AEFBQUFBQUFBQUFGU2RuSlkrU2hLVktnQjZwNVM3TTZtZ3h6UU1MZS8xYWZuZnFaeE1DbTJMbUlPUEpnbWdteWt2RjZ5SW42eDVUTk83azEwUUNiQ0kvZ2F6U01wZitPZ2ZyVEd6Snc3bXZ2dDNEdWQ4OVlJbFg0aWdsc01aV3hDNkVlQWhwb2pkalAzTGpQWEJrZldIWXVPSEFja2VhU3QwS0oxWk1veUY1NXlKOEVJaUMvZ1F0SHRuVkhyQXUwQi81Y2dzT0owSENCemxFWW9xbWg1UXB0eC9MdXlSVnR6V0JGcHBVR1BBVXY3SytPVXpWK1d1ZTJaajVkb0p1Q3FZNVNwWEhGUng1YzhEVk1lZGZFb0lndnc5ZG1GVnlWRCszM3Iwanp6TTM4NlJTRGhZK1doZkFYNkNhRDVzTU8zT3ZFQks3dVNnaVIvRmdRSG0rS0VLR2NiM0hTQTBscnN6TGFNZ0pkYnJoZ3B5TjZ6eE95SXVTQllZZ0pZSWcxeGNpbFZtb2RWMi80PQ=="
+      },
+      {
+        "name": "X-SES-DKIM-SIGNATURE",
+        "value": "a=rsa-sha256; q=dns/txt; b=yKYR5vcISbrJ+8Gc3v9evO2Gffv2qjPX6zNsBpD7jp9rtmdIoR+j6wjs1zEt8Cmn3SVCcvSkg0v3umwTp6nh7SrFSpcBzzpyP2UWeoLeSAAltI4RuPR0c0reYoTj1XalXZrHCPqZXmBAMeldie70jzZMp7F5BZtuSVIrxi0HtVw=; c=relaxed/simple; s=shh3fegwg5fppqsuzphvschd53n6ihuv; d=amazonses.com; t=1586156502; v=1; bh=pvrE6kjrwFQshXCsjbHy72ossQB+m4VGNMeivzH3E6k=; h=From:To:Cc:Bcc:Subject:Date:Message-ID:MIME-Version:Content-Type:X-SES-RECEIPT;"
+      },
+      {
+        "name": "DKIM-Signature",
+        "value": "v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=vyb5zawdf2ylzu5ziqtg75qqz4ijl2zi; d=sender.example.com; t=1586156502; h=From:Subject:To:Message-ID:Date:MIME-Version:Content-Type:Content-Transfer-Encoding; bh=pvrE6kjrwFQshXCsjbHy72ossQB+m4VGNMeivzH3E6k=; b=BiTmFzFZ2eU4MxkttNFDZoFzBzX4Q+GDoORiIj6q1CyzlZCGYzZkyiPp2JuvJapr/B4GVLTsQnBMOtVTJYS7WQKrIF59rYJY9dwngnPeA3m1AtG2I7ikjJzi4wVk7c07PR6Lg8begzHPbLHoXeSM8kWeEA2JFVUb3esrVbiui1g="
+      },
+      {
+        "name": "DKIM-Signature",
+        "value": "v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=sokbgaaqhfgd6qjht2wmdajpuuanpimv; d=amazonses.com; t=1586156502; h=From:Subject:To:Message-ID:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID; bh=pvrE6kjrwFQshXCsjbHy72ossQB+m4VGNMeivzH3E6k=; b=mkrQq5bZBq5E5MOIDLXg+eBjj68cxtK4JNc8F0P2dGgf/V28Rg6klheroNbf9d7KDI3jDpSKLE/li82Hy8UIcMkTgQatgZyKnhs1oPheXfhovOqc7fOqqMGZUFBMfqYOoDtfJYipjZc2+3Zn5l4PRW5fi36rz2yBqtjliOlB/48="
+      },
+      {
+        "name": "DKIM-Signature",
+        "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=sender.example.com; s=mail; t=1586156501; h=from:from:reply-to:subject:subject:date:date:message-id:message-id:to:to:cc:mime-version:mime-version:content-type:content-type:content-transfer-encoding:content-transfer-encoding; bh=pvrE6kjrwFQshXCsjbHy72ossQB+m4VGNMeivzH3E6k=; b=bOYdtfVb37/zW488DS41h/+EpKEJ6THvzoEb/haSq3BkXuJUZUXy9BAv1vwP0f0wH8x1IA3HXQM6xVyv/B8uSMNGKjM/FmGAaSzoUJegVAM5BBRpKzgDkI8CRU5oYcfBIK5dwQtITPMSJVAvIJnYHFKLBgEZ8mJEHL+B1s2Kq7s="
+      },
+      {
+        "name": "From",
+        "value": "Any Sender <any@sender.example.com>"
+      },
+      {
+        "name": "Subject",
+        "value": "Testmail #1 over SES"
+      },
+      {
+        "name": "To",
+        "value": "c292df2c-d2f2-47c2-9ca8-c84b03389282@any.domain.example.com"
+      },
+      {
+        "name": "Message-ID",
+        "value": "<010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com>"
+      },
+      {
+        "name": "Date",
+        "value": "Mon, 6 Apr 2020 07:01:42 +0000"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Thunderbird/68.5.0"
+      },
+      {
+        "name": "MIME-Version",
+        "value": "1.0"
+      },
+      {
+        "name": "Content-Type",
+        "value": "text/plain; charset=utf-8; format=flowed"
+      },
+      {
+        "name": "Content-Language",
+        "value": "en-US"
+      },
+      {
+        "name": "Content-Transfer-Encoding",
+        "value": "7bit"
+      },
+      {
+        "name": "ARC-Message-Signature",
+        "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=sender.example.com; s=mail; t=1586156501; h=from:from:reply-to:subject:subject:date:date:message-id:message-id: to:to:cc:mime-version:mime-version:content-type:content-type: content-transfer-encoding:content-transfer-encoding; bh=pvrE6kjrwFQshXCsjbHy72ossQB+m4VGNMeivzH3E6k=; b=NJkhcrtkGGKYJ3vnJrhrs1u/BddYXvCzbXbBqANUVSk2G6mfHr+zhvBxSNUQ1AnAjA3PFY UfCp+LQF71m4MpCZ1gXuNPtqUmoUqJEDweLQcKYitVbCpAikQ6wFZ4ZBomK75UHPKUzgh6 KwcFP7nwvIijKUToLoKrMhe5axI07Q0="
+      },
+      {
+        "name": "ARC-Seal",
+        "value": "i=1; s=mail; d=sender.example.com; t=1586156501; a=rsa-sha256; cv=none; b=j0hxfwA3kqfgmD4ykW621pAG0vGpOn+6l+xttAPEqr9uD7LNBRHK6skPL6ONo9lfbDH5Xm kZae8aidJEDDSESXnX5Dv0PHYUGlkjYkYe9GLGyVCXmor+s20FhTf/BeCk/rgQGQYFpWuI ObKvfwtGiGl/AUN24yjzTAj4dubb2nA="
+      },
+      {
+        "name": "ARC-Authentication-Results",
+        "value": "i=1; server.example.com; auth=pass smtp.mailfrom=any@sender.example.com"
+      },
+      {
+        "name": "X-SES-Outgoing",
+        "value": "2020.04.06-69.169.224.5"
+      },
+      {
+        "name": "Feedback-ID",
+        "value": "1.eu-central-1.z+A14S1N3HtkKdjbkK4YWGCDawhCuQoLLmmDQ/hNB/c=:AmazonSES"
+      }
+    ],
+    "commonHeaders": {
+      "returnPath": "010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com",
+      "from": [
+        "Any Sender <any@sender.example.com>"
+      ],
+      "date": "Mon, 6 Apr 2020 07:01:42 +0000",
+      "to": [
+        "c292df2c-d2f2-47c2-9ca8-c84b03389282@any.domain.example.com"
+      ],
+      "messageId": "<010701714e4b7bf5-c610602e-33c9-4203-8ebd-4b32d93b48f7-000000@eu-central-1.amazonses.com>",
+      "subject": "Testmail #1 over SES"
+    }
+  },
+  "receipt": {
+    "timestamp": "2020-04-06T07:01:42.575Z",
+    "processingTimeMillis": 494,
+    "recipients": [
+      "c292df2c-d2f2-47c2-9ca8-c84b03389282@any.domain.example.com"
+    ],
+    "spamVerdict": {
+      "status": "PASS"
+    },
+    "virusVerdict": {
+      "status": "PASS"
+    },
+    "spfVerdict": {
+      "status": "PASS"
+    },
+    "dkimVerdict": {
+      "status": "PASS"
+    },
+    "dmarcVerdict": {
+      "status": "PASS"
+    },
+    "action": {
+      "type": "S3",
+      "topicArn": "arn:aws:sns:eu-west-1:425437850465:test-bucket-name-inbound",
+      "bucketName": "test-bucket-name",
+      "objectKeyPrefix": "inbound/",
+      "objectKey": "inbound/XSVx2kwXNJdYZYdh4xwffR2BLmq52vRY"
+    }
+  }
+}
