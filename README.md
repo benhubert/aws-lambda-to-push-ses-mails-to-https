@@ -5,13 +5,13 @@ Service_ (AWS SES) to any HTTP or HTTPS API.
 
 How it works
 --------------
-① AWS SES receives an e-mail over SMTP.
-② AWS SES stores the content of this e-mail in an AWS S3 bucket ...
-③ ... and pushes a notification to AWS SNS, which contains a reference to this bucket.
-④ The AWS Lambda is configured to listen on this SNS queue and starts handling this e-mail.
-⑤ It therefore loads the e-mail content from the S3 bucket.
-⑥ ... and pushes this e-mail message to the configured possibly external HTTP(S) (REST) API.
-⑦ If successful, the e-mail is removed from AWS S3.
+ * ① AWS SES receives an e-mail over SMTP.
+ * ② AWS SES stores the content of this e-mail in an AWS S3 bucket ...
+ * ③ ... and pushes a notification to AWS SNS, which contains a reference to this bucket.
+ * ④ The AWS Lambda is configured to listen on this SNS queue and starts handling this e-mail.
+ * ⑤ It therefore loads the e-mail content from the S3 bucket.
+ * ⑥ ... and pushes this e-mail message to the configured possibly external HTTP(S) (REST) API.
+ * ⑦ If successful, the e-mail is removed from AWS S3.
 
 ![Overview](/doc/overview.jpg)
 
