@@ -33,15 +33,19 @@ public class SNSEventHandler {
         String mailContent = s3Client.getObjectAsString(bucketName, objectKey);
 
         log("Pushing mail to API.");
-        handleMail(eventContent, mailContent);
+        boolean messageCanBeDeleted = handleMail(eventContent, mailContent);
 
-        log("Deleting mail from S3: " + bucketName + ", " + objectKey + ".");
-        s3Client.deleteObject(bucketName, objectKey);
+        if (messageCanBeDeleted) {
+            log("Deleting mail from S3: " + bucketName + ", " + objectKey + ".");
+            s3Client.deleteObject(bucketName, objectKey);
+        } else {
+            log("Message is kept in S3 bucket.");
+        }
     }
 
-    private void handleMail(EventContent eventContent, String mailContent) {
+    private boolean handleMail(EventContent eventContent, String mailContent) {
         String to = eventContent.getMail().getHeader("To").map(Header::getValue).orElse("");
-        apiClient.pushMailToApi(to, mailContent);
+        return apiClient.pushMailToApi(to, mailContent);
     }
 
     private void log(String line) {

@@ -40,15 +40,17 @@ public class SimpleApiClient implements ApiClient {
     }
 
     @Override
-    public void pushMailToApi(String to, String body) {
+    public boolean pushMailToApi(String to, String body) {
         String url = buildUrl(to);
         log("Pushing mail to " + url + ".");
         HttpRequest request = buildHttpRequest(url, body);
 
+        boolean messageCanBeDeleted = false;
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             if (expectedResponseCode.equals(response.statusCode())) {
                 log("API return HTTP " + response.statusCode() + ". Done.");
+                messageCanBeDeleted = true;
             } else if (rejectedResponseCode.equals(response.statusCode())) {
                 log("API returned HTTP " + response.statusCode() + " which is means that this mail is rejected permanently. Will drop it.");
             } else {
@@ -58,7 +60,7 @@ public class SimpleApiClient implements ApiClient {
         } catch (Exception e) {
             throw new IllegalStateException("Failed to push mail to API.", e);
         }
-
+        return messageCanBeDeleted;
     }
 
     private HttpClient createHttpClient(Duration connectTimeout) {
